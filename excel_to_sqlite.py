@@ -5,7 +5,7 @@ import pandas as pd
 # would be better if original excel can become drop-in
 
 cxn = sqlite3.connect('app/repairdata.sqlite')
-wb = pd.read_excel('repairs-en.xlsx',sheet_name = 'repairs-en')
+wb = pd.read_excel('repairs-en_first50.xlsx',sheet_name = 'repairs-en')
 wb.to_sql(name='repairs',con=cxn,if_exists='replace',index=True)
 cxn.commit()
 cxn.close()
